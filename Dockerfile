@@ -1,11 +1,13 @@
-FROM node:16-alpine
+FROM node:17
 
 WORKDIR /app
 
-COPY . .
+COPY *.json /app/
 
 RUN npm install
 
-EXPOSE $PORT
+COPY . /app/
+
+EXPOSE 3001
 
 CMD ["npm", "start"]
